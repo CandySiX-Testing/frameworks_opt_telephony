@@ -198,6 +198,11 @@ public abstract class PhoneBase extends Handler implements Phone {
     // Key used to read/write the ID for storing the voice mail
     public static final String VM_ID = "vm_id_key";
 
+    // Key used for storing call forwarding status
+    public static final String CF_STATUS = "cf_status_key";
+    // Key used to read/write the ID for storing the call forwarding status
+    public static final String CF_ID = "cf_id_key";
+
     // Key used to read/write the SIM IMSI used for storing the imsi
     public static final String SIM_IMSI = "sim_imsi_key";
     // Key used to read/write SIM IMSI used for storing the imsi
@@ -2740,7 +2745,7 @@ public abstract class PhoneBase extends Handler implements Phone {
         }
         return false;
     }
-    
+
     /* Validate the given extras if the call is for CS domain or not */
     protected boolean shallDialOnCircuitSwitch(Bundle extras) {
             return (extras != null && extras.getInt(QtiVideoCallConstants.EXTRA_CALL_DOMAIN,
